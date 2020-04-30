@@ -1,12 +1,43 @@
+html {
+	background: #d2412a;
+    background: -moz-linear-gradient(top, #E5C399 0%, #fff 120%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #E5C399), color-stop(120%, #fff));
+    background: -webkit-linear-gradient(top, #E5C399 0%, #fff 120%);
+    background: -o-linear-gradient(top, #E5C399 0%, #fff 120%);
+    background: -ms-linear-gradient(top, #E5C399 0%, #fff 120%);
+    background: linear-gradient(to bottom, #E5C399 0%, #fff 120%);
+}
 body {
-  margin:0 50px;
-  font: 75% "Trebuchet MS", Verdana, sans-serif;
-  min-width: 690px;
+	margin: 0 auto;
+	/* margin:0 50px; */
+	font: 75% "Trebuchet MS", Verdana, sans-serif;
+	width: 80%;
+	background-color: #fff;
+	/* min-width: 690px; */
+}
+header {
+	text-align: center;
+	font-size: 16px;
+	width: 100%;
+	background-color: rgb(119, 119, 119);
+	padding: 3px 0 22px 0;
+	background: #d2412a;
+    background: -moz-linear-gradient(top, #deba8e 0%, #fff 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #deba8e), color-stop(100%, #fff));
+    background: -webkit-linear-gradient(top, #deba8e 0%, #fff 100%);
+    background: -o-linear-gradient(top, #deba8e 0%, #fff 100%);
+    background: -ms-linear-gradient(top, #deba8e 0%, #fff 100%);
+    background: linear-gradient(to bottom, #deba8e 0%, #fff 100%);
+}
+section {
+	margin: 0 auto;
+	width: 600px;
 }
 
 footer {
   display: block;
-  text-align: justify;
+  text-align: center;
+  /* text-align: justify; */
   margin: 50px 0 0;
   padding: .5em 0 50px;
   opacity: 0.7;
