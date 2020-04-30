@@ -29,11 +29,28 @@ header {
     background: -ms-linear-gradient(top, #deba8e 0%, #fff 100%);
     background: linear-gradient(to bottom, #deba8e 0%, #fff 100%);
 }
+main {
+	margin: 0 auto;
+	padding: 0 30px;
+	width: 86%;
+}
 section {
 	margin: 0 auto;
 	width: 600px;
 }
-
+h1 {
+	text-align: center;
+}
+h4 {
+	font-size: 18px;
+	text-align: center;
+}
+img {
+	margin: 0px auto;
+	display: block;
+	max-width: 98%;
+	height:auto;
+}
 footer {
   display: block;
   text-align: center;
