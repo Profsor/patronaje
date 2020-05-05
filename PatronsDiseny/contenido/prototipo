@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Patrones de diseÃ±o. DECORATOR</title>
+<link rel="stylesheet" href="../css/screen.css" type="text/css" media="all">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="author" content="Gabriela Zavala Sandoval">
+</head>
+<body>
+<header>Entornos de Desarrollo 2020.
+</header>
+
+
+<h1>Prototipo</h1>
+<div style= "width: 600px;">
+<p> En algunos casos, el coste de crear un objeto nuevo desde 0 es muy elevado, y más aún si luego hay que establecer una gran colección de atributos.
+ En éste contexto sería más conveniente clonar un objeto predeterminado que actúe de prototipo y modificar los valores necesarios para que se ajuste a su nuevo propósito.
+Se aplica cuando: </p>
+
+<ul>
+   <li> La creación de nuevos objetos acarrea un coste computacional elevado. </li>
+   <li> Los objetos a crear tienen o suelen tener atributos que repiten su valor. </li>
+</ul>    
+<p>La solución consistirá en definir una interfaz que expone el método necesario para realizar la clonación del objeto.
+ Las clases que pueden ser clonadas implementarán esta interfaz, mientras que las clases que deseen clonar deberán utilizar el método definido en la interfaz.</p>
+
+<p>Además, existen 2 tipos de clonación: la clonación profunda y la clonación superficial. En la clonación superficial modificar las referencias a terceros objetos hace que los originales cambien, 
+ya que los terceros objetos son en realidad punteros. En la clonación profunda se clonan los terceros objetos dando lugar a nuevas referencias independientes. </p>
+
+<p>La estructura es la siguiente: </p>
+<img src="../img/prototipo.png" width="600" height="400" title="Estructura del patrÃ³n de diseÃ±o Decorator."></img><br/>
+
+<p> Donde: </p>
+
+<p>Prototype: Interfaz que define la operación de clonado. Será implementada por todos los objetos que puedan ser clonados. En ocasiones es implementado como una clase abstracta.</p>
+
+<p>Client: Crea nuevos objetos mediante la clonación de los mismos.</p>
+
+<p>ConcretePrototype1: Clase que puede ser instanciada mediante la clonación de un prototipo. Implementa la interfaz Prototype.</p>
+
+<p>ConcretePrototype2: Otra clase con las mismas características que ConcretePrototype1.</p>
+
+<p> Consecuencias:</p>
+
+ <ul>
+ <li> POSITIVAS:</li>
+      Clonar un objeto es mucho más rápido que crearlo.
+      Un programa puede añadir y borrar dinámicamente objetos prototipo en tiempo de ejecución.
+      El cliente no debe conocer los detalles de cómo construir los objetos prototipo.
+  <li>  NEGATIVAS </li>
+      En objetos muy complejos, implementar la interfaz Prototype puede ser muy complicada.
+</ul>
+
+ <br></br><a href="https://programacion.net/articulo/patrones_de_diseno_v_patrones_de_creacion_prototipo_1005"> Información extraída de aquí </a>
+ <br/><br/><a href="../index.html">Volver a la pagina principal</a>
+ 
+</div>
+<footer><p>Un trabajo bien hecho por el alumnado del modulo de Entornos de Desarrollo. 2020</p>
+</footer>
+</body>
+</html>
