@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Patrones de diseño. CODIGO SPAGUETTI</title>
+<link rel="stylesheet" href="../css/screen.css" type="text/css" media="all">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<header>Entornos de Desarrollo 2020.
+</header>
+
+<h1>Codigo Spaguetti</h1>
+<div style="width:600px;">
+<p>Es un término peyorativo para los programas de computación que tienen una estructura de control de flujo compleja e incomprensible.</p><br/>
+<p>Su nombre deriva del hecho que este tipo de código parece asemejarse a un plato de espaguetis, es decir, un montón de hilos intrincados y anudados.</p>
+<p>Suele asociarse con lenguajes basicos y antiguos, donde el flujo se controlaba mediante sentencias de control muy primitivas como goto y utilizando números de línea.</p><br/>
+<p>Ahora bien, el GOTO es una instrucción que pertenece a los primeros lenguajes de programación como el famoso BASIC y su propósito es transferir el control a un punto determinado del código donde debe continuar la ejecución</p>
+<p>Los números lineales, <strong>se enfocan en optimizar una función objetivo</strong>, mediante una serie de restricciones expresadas mediante un sistema de ecuaciones o inecuaciones igualmente lineales</p><br/>
+<p><Strong>NO PROPORCIONAN UN SIGNIFICDA CLARO DE LO QUE ESTÁ SUCEDIENDO</strong></p>
+<br/>
+<p>¿Se puede trabajar con el codigo espagueti?</p>
+<ul>
+  <li> Muchos programadores consideran que escribir código espagueti es un verdadero desastre </li>
+  <li> Aunque, si permite a la persona entender la comprension del problema no es del todo negativo</li>
+  <li><Strong>Lo más importante es utilizar la refactorización, iterar sobre varios repasos del código</strong></li>
+ </ul>
+ 
+ <p> Podemos decir que lo importante es ir de más a menos, en un principio el código espagueti puede ser la base enredada de lo que se quiere programar, pero al momento de refactorizar, se tendrá que ser cada vez más especifico</p>
+ <img src="https://github.com/franriquelmesanchez/patronaje/blob/master/PatronsDiseny/img/codigo-espagueti.jpg" width="600" height="400" title="Codigo espagueti.">
+ <br>
+ <br>
+ <br>
+ <a href="https://codigoespagueti.com/noticias/internet/que-es-codigo-espagueti/"> El contenido de este apartado ha sido extraído de este enlace</a>
+ <br>
+ <br>
+ <a href="file:///C:/Users/Fran/git/patronaje/PatronsDiseny/index.html">Volver a la página principal</a>
+ </div>
+ </body>
+ </html>
