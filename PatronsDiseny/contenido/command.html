@@ -4,7 +4,7 @@
 <title>Patrones de diseñoo. Command</title>
 <link rel="stylesheet" href="../css/screen.css" type="text/css" media="all">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="author" content="Juan Antonio Guillo Lopez">  
+<meta name="author" content="Juan Antonio Guillo Lopez y Juan Antonio Marco Poveda">  
 </head>
 <body>
 <header>Entornos de Desarrollo 2020.
@@ -16,6 +16,41 @@
   <a class="addthis_button_print addthis_button_preferred_3 at300b" title="Print" href="#"><span class="at-icon-wrapper" style="background-color: rgb(115, 138, 141); line-height: 16px; height: 16px; width: 16px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-print-5" class="at-icon at-icon-print" style="width: 16px; height: 16px;" title="Print" alt="Print"><title id="at-svg-print-5">Print</title><g><path d="M24.67 10.62h-2.86V7.49H10.82v3.12H7.95c-.5 0-.9.4-.9.9v7.66h3.77v1.31L15 24.66h6.81v-5.44h3.77v-7.7c-.01-.5-.41-.9-.91-.9zM11.88 8.56h8.86v2.06h-8.86V8.56zm10.98 9.18h-1.05v-2.1h-1.06v7.96H16.4c-1.58 0-.82-3.74-.82-3.74s-3.65.89-3.69-.78v-3.43h-1.06v2.06H9.77v-3.58h13.09v3.61zm.75-4.91c-.4 0-.72-.32-.72-.72s.32-.72.72-.72c.4 0 .72.32.72.72s-.32.72-.72.72zm-4.12 2.96h-6.1v1.06h6.1v-1.06zm-6.11 3.15h6.1v-1.06h-6.1v1.06z"></path></g></svg></span></a>
   <a class="addthis_button_email addthis_button_preferred_4 at300b" target="_blank" title="Email" href="#"><span class="at-icon-wrapper" style="background-color: rgb(132, 132, 132); line-height: 16px; height: 16px; width: 16px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-email-6" class="at-icon at-icon-email" style="width: 16px; height: 16px;" title="Email" alt="Email"><title id="at-svg-email-6">Email</title><g><g fill-rule="evenodd"></g><path d="M27 22.757c0 1.24-.988 2.243-2.19 2.243H7.19C5.98 25 5 23.994 5 22.757V13.67c0-.556.39-.773.855-.496l8.78 5.238c.782.467 1.95.467 2.73 0l8.78-5.238c.472-.28.855-.063.855.495v9.087z"></path><path d="M27 9.243C27 8.006 26.02 7 24.81 7H7.19C5.988 7 5 8.004 5 9.243v.465c0 .554.385 1.232.857 1.514l9.61 5.733c.267.16.8.16 1.067 0l9.61-5.733c.473-.283.856-.96.856-1.514v-.465z"></path></g></svg></span></a>
 <div class="atclear"></div></div>
+
+	</section>
+	<h1>Patrón de diseño Command</h1>
+	
+	<section>
+		<p>El patrón de diseño Command es muy utilizado cuando se requiere hacer ejecuciones de operaciones sin conocer realmente lo que hacen, estas operaciones son conocidas como comandos y son implementadas como una clase independiente que realiza una acción muy concreta, para lo cual,únicamente recibe un conjunto de parámetros para realizar su tarea.</p>
+		<p>La siguiente imagen muestra la estructura del patrón de diseño:</p>
+		<div><img src="../img/command1.png" width="700" height="500"></div>
+		<p>En la imagen podemos apreciar los siguientes elementos:</p>
+		<p><strong>ICommand:</strong> Esta es la pieza más importante del patrón, ya que cada comando deberá implementar esta interface y deberá implementar el método execute, el cual, de forma polimórfica realizara la operación que deseamos. Este componente generalmente es una interface o una clase abstract.
+		</p>
+		<p><strong>Concrete Command:</strong>  Para este componente hablaremos en plural, ya que cada Concrete Command que tengamos implementado se convertirá en un comando en nuestro patrón. Este componente tiene que implementar ICommand de forma directa o indirecta y deberá implementar el método execute, en el cual se realizara la operación que deseamos que realice el comando.
+		</p>
+		<p><strong>Command Manager:</strong>  Este componente nos servirá para administrar los comandos que tenemos disponibles en tiempo de ejecución, desde aquí podemos ejecutar un Comando o registrar nuevos comandos para que estén disponibles en tiempo de ejecución. Esta clase es importante, ya que de nada sirve tener un conjunto de Concrete Command que implementan ICommand regados por nuestro proyecto si no tenemos un componente que los administre y nos permite ejecutarlos.</p>
+		<p><strong>Invoker:</strong>  El invoker representa a la acción que dispara alguno de los comandos, un invoker podría ser un usuario, una aplicación o algún evento generado por nuestra aplicación.</p>
+		<p>Para analizar mejor este Patrón de diseño analizaremos el ejemplo de la consola y desarrollaremos una mediante el Patrón Command. Para iniciar el ejemplo tendremos que pensar primero en la funcionalidad que le daremos a nuestra consola, en este ejemplo desarrollaremos comandos muy simples pero útiles que ayuden a demostrar la utilidad del patrón, para lo cual les dejo la siguiente imagen:</p>
+		<div><img src="../img/command2.png" width="700" height="500"></div>
+		<ol>
+			<li>El invoker obtiene un Comando del CommandManager.</li>
+			<li>El invoker ejecuta el comando.</li>
+			<li>El invoker obtiene otro Comando del CommandManager.</li>
+			<li>El invoker ejecuta el comando.</li>
+		</ol>
+		<h2>Ejemplo del mundo real</h2>
+		<div><img src="../img/command3..png" width="700" height="500"></div>
+		<h2>En el siguiente video podemos aprernder más acerca de este patrón de diseño</h2>
+		<div><iframe width="560" height="315" src="https://www.youtube.com/embed/ETIO7m_RsKY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		<div>
+			<br><br><br>
+			<a href="../index.html"><strong> Pagina principal</strong></a>
+		</div>
+		
+	</section>
+
 
  <h1>Command</h1>
 <div style= "width: 600px;">
@@ -46,3 +81,4 @@ Basicamente lo que promueve este patron de diseño es la encapsulación de la pe
 </footer>
   </body>
   </html>
+
