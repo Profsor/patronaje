@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<title>Patrones de diseño. Decorador</title>
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="all">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="author" content="Celia Ruiz">
+</head>
+<body>
+<header>Entornos de Desarrollo 2020.
+</header>
+<section id="main">
+<div class="addthis_toolbox addthis_default_style ">
+  <a class="addthis_button_facebook addthis_button_preferred_1 at300b" title="Facebook" href="#"><span class="at-icon-wrapper" style="background-color: rgb(59, 89, 152); line-height: 16px; height: 16px; width: 16px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-facebook-3" class="at-icon at-icon-facebook" style="width: 16px; height: 16px;" title="Facebook" alt="Facebook"><title id="at-svg-facebook-3">Facebook</title><g><path d="M22 5.16c-.406-.054-1.806-.16-3.43-.16-3.4 0-5.733 1.825-5.733 5.17v2.882H9v3.913h3.837V27h4.604V16.965h3.823l.587-3.913h-4.41v-2.5c0-1.123.347-1.903 2.198-1.903H22V5.16z" fill-rule="evenodd"></path></g></svg></span></a>
+  <a class="addthis_button_twitter addthis_button_preferred_2 at300b" title="Twitter" href="#"><span class="at-icon-wrapper" style="background-color: rgb(29, 161, 242); line-height: 16px; height: 16px; width: 16px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-twitter-4" class="at-icon at-icon-twitter" style="width: 16px; height: 16px;" title="Twitter" alt="Twitter"><title id="at-svg-twitter-4">Twitter</title><g><path d="M27.996 10.116c-.81.36-1.68.602-2.592.71a4.526 4.526 0 0 0 1.984-2.496 9.037 9.037 0 0 1-2.866 1.095 4.513 4.513 0 0 0-7.69 4.116 12.81 12.81 0 0 1-9.3-4.715 4.49 4.49 0 0 0-.612 2.27 4.51 4.51 0 0 0 2.008 3.755 4.495 4.495 0 0 1-2.044-.564v.057a4.515 4.515 0 0 0 3.62 4.425 4.52 4.52 0 0 1-2.04.077 4.517 4.517 0 0 0 4.217 3.134 9.055 9.055 0 0 1-5.604 1.93A9.18 9.18 0 0 1 6 23.85a12.773 12.773 0 0 0 6.918 2.027c8.3 0 12.84-6.876 12.84-12.84 0-.195-.005-.39-.014-.583a9.172 9.172 0 0 0 2.252-2.336" fill-rule="evenodd"></path></g></svg></span></a>
+  <a class="addthis_button_print addthis_button_preferred_3 at300b" title="Print" href="#"><span class="at-icon-wrapper" style="background-color: rgb(115, 138, 141); line-height: 16px; height: 16px; width: 16px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-print-5" class="at-icon at-icon-print" style="width: 16px; height: 16px;" title="Print" alt="Print"><title id="at-svg-print-5">Print</title><g><path d="M24.67 10.62h-2.86V7.49H10.82v3.12H7.95c-.5 0-.9.4-.9.9v7.66h3.77v1.31L15 24.66h6.81v-5.44h3.77v-7.7c-.01-.5-.41-.9-.91-.9zM11.88 8.56h8.86v2.06h-8.86V8.56zm10.98 9.18h-1.05v-2.1h-1.06v7.96H16.4c-1.58 0-.82-3.74-.82-3.74s-3.65.89-3.69-.78v-3.43h-1.06v2.06H9.77v-3.58h13.09v3.61zm.75-4.91c-.4 0-.72-.32-.72-.72s.32-.72.72-.72c.4 0 .72.32.72.72s-.32.72-.72.72zm-4.12 2.96h-6.1v1.06h6.1v-1.06zm-6.11 3.15h6.1v-1.06h-6.1v1.06z"></path></g></svg></span></a>
+  <a class="addthis_button_email addthis_button_preferred_4 at300b" target="_blank" title="Email" href="#"><span class="at-icon-wrapper" style="background-color: rgb(132, 132, 132); line-height: 16px; height: 16px; width: 16px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-email-6" class="at-icon at-icon-email" style="width: 16px; height: 16px;" title="Email" alt="Email"><title id="at-svg-email-6">Email</title><g><g fill-rule="evenodd"></g><path d="M27 22.757c0 1.24-.988 2.243-2.19 2.243H7.19C5.98 25 5 23.994 5 22.757V13.67c0-.556.39-.773.855-.496l8.78 5.238c.782.467 1.95.467 2.73 0l8.78-5.238c.472-.28.855-.063.855.495v9.087z"></path><path d="M27 9.243C27 8.006 26.02 7 24.81 7H7.19C5.988 7 5 8.004 5 9.243v.465c0 .554.385 1.232.857 1.514l9.61 5.733c.267.16.8.16 1.067 0l9.61-5.733c.473-.283.856-.96.856-1.514v-.465z"></path></g></svg></span></a>
+<div class="atclear"></div></div>
+<h1 style="text-align: center;"><span style="color:#FF0000;"><strong>PATRON DE DISE&Ntilde;O DECORADOR O DECORATOR</strong></span></h1>
+
+<h3><strong>Introducci&oacute;n </strong></h3>
+
+<p>La herencia extiende el comportamiento de una nueva clase hija lig&aacute;ndola fuertemente con su clase madre.</p>
+
+<p>A veces, necesitamos un mecanismo m&aacute;s flexible que la herencia para ampliar el comportamiento de una clase. De hecho, se recomienda utilizar la composici&oacute;n frente a la herencia.</p>
+
+<p>El patr&oacute;n de dise&ntilde;o Decorador nos ofrece una soluci&oacute;n para a&ntilde;adir nueva funcionalidad a una clase, m&aacute;s flexible que la herencia, y de manera din&aacute;mica.</p>
+
+<h3><strong>Definici&oacute;n del patr&oacute;n de dise&ntilde;o Decorador</strong></h3>
+
+<p>Asigna responsabilidades adicionales a un objeto din&aacute;micamente, proporcionando una alternativa flexible a la herencia para extender la funcionalidad.</p>
+
+<p>Este ser&iacute;a el modelo UML general del Patr&oacute;n Decorador:</p>
+
+<img src="../img/decorator_image1.png" title="patrón de diseño Decorador."></img><br/>
+
+<p><u>Ventajas</u>:</p>
+
+<ul>
+	<li>Dise&ntilde;o m&aacute;s flexible que utilizando herencia.</li>
+	<li>La funcionalidad se va a&ntilde;adiendo seg&uacute;n la vamos necesitando.</li>
+</ul>
+
+<p><u>Desventajas</u>:</p>
+
+<ul>
+	<li>Desde el punto de vista de la igualdad de objetos, un objeto recubierto y el objeto original no se pueden comparar.</li>
+	<li>Si creamos muchos recubridores, puede dar lugar a una explosi&oacute;n de clases.</li>
+</ul>
+
+<h3><strong>El patr&oacute;n Decorador en el paquete est&aacute;ndar de Java </strong></h3>
+
+<p>El ejemplo arquet&iacute;pico en Java es el paquete de entrada/salida.</p>
+
+<p>Java define un gran n&uacute;mero de clases en java.io para hacer tareas de entrada salida.</p>
+
+<p>En la jerarqu&iacute;a de clases definidas, unas recubren a otras siguiendo el patr&oacute;n de dise&ntilde;o Decorador de tal modo que se van a&ntilde;adiendo nuevas funcionalidad a la clase original con cada nuevo recubrimiento.</p>
+
+<p>En la primera versi&oacute;n de Java, el teclado era una fuente de bytes de datos, no de caracteres. Normalmente, lo que queremos leer desde el teclado son l&iacute;neas de caracteres, no caracteres individuales. Luego de alg&uacute;n modo tenemos que convertir los bytes a caracteres y de estos a l&iacute;neas de caracteres.</p>
+
+<p>Un posible modo de conseguirlo es utilizar las clases del paquete java.io</p>
+
+<img src="../img/decorator_image2.png" title="patrón de diseño Decorador."></img><br/>
+
+<h4><u>Recursos</u>:</h4>
+
+<a href="http://www3.uji.es/~belfern/Docencia/Presentaciones/ProgramacionAvanzada/Tema2/decorador.html"></a>
+
+</section>
+<footer>
+<p>Un trabajo bien hecho por el alumnado del módulo de Entornos de Desarrollo. 2020</p>
+</footer>
+</body>
+</html>
