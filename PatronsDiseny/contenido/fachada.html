@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Patrones de diseño. FACHADA</title>
+	<link rel="stylesheet" href="../css/screen.css" type="text/css" media="all">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+	<header>Entornos de Desarrollo 2020.</header>
+	
+	<h1>Fachada</h1>
+
+	<h4>Patrón de diseño estructural</h4>
+	<p>Disponemos de un sistema complejo que, al ser muy flexible, requiere de la configuración de muchos parámetros para conseguir un fin concreto. 
+	   Por otro lado, nuestro sistema cliente pretende utilizar parte de la funcionalidad que el primer sistema ofrece pero muchas de las operaciones 
+	   de configuración son siempre las mismas.</p>
+	<p>Otro problema que trata de solucionar este patrón es el uso de varias interfaces de subsistemas mediante un único punto de acceso.</p>
+
+	<h4>Se aplica cuando:</h4>
+	<ul>
+		<li>Nuestro sistema cliente tiene que acceder a parte de la funcionalidad de un sistema complejo.</li>
+		<li>Hay tareas o configuraciones muy frecuentes y es conveniente simplificar el código de uso.</li>
+		<li>Necesitamos hacer que una librería sea más legible.</li>
+		<li>Nuestros sistemas clientes tienen que acceder a varias APIs y queremos simplificar dicho acceso.</li>
+	</ul>
+	
+	<h4>Solución y estructura:</h4>
+	<p>La solución consiste en crear una clase fachada que proporcione la funcionalidad de manera sencilla a nuestro sistema cliente. Dicha clase 
+	   utilizará la clase compleja o los distintos componentes de los sistemas requeridos y los ofrecerá por medio de operaciones más simples.</p>
+	
+	<img src="../img/facadepattern.png" width="600" height="400" title="Estructura del patrón de diseño Decorator."></img><br/>
+	
+	<p>Donde:</p>
+	<p>Client: Representa al sistema que quiere hacer uso de la clase compleja o el conjunto de susbsistemas mediante la fachada.</p>
+	<p>Facade: Clase fachada que trata de ofrecer la funcionalidad que demanda el cliente mediante una interfaz sencilla donde, 
+	   internamente, utiliza las clases complejas.</p>
+	<p>ComplicatedClassX: Conjunto de clases que se necesitan utilizar y a las que se pretende dar un punto de acceso sencillo 
+	   mediante la fachada.</p>
+
+	<h4>Consecuencias</h4>
+	<ul>
+		<li>POSITIVAS:</li>
+			<ul>
+				<li>Simplifica el uso de sistemas complejos con tareas redundantes.</li>
+				<li>Oculta al cliente la complejidad real del sistema.</li>
+				<li>Reduce el acoplamiento entre el subsistema y los clientes.</li>
+			</ul>
+		<li>NEGATIVAS:</li>
+			<ul>
+				<li>Creamos clases para funcionalidad ya existente.</li>
+			</ul>
+	</ul>
+	
+	<p>Patrones Relacionados: Instancia única, Mediator y Fábrica abstracta.</p>
+	
+	<br/><a href="https://programacion.net/articulo/patrones_de_diseno_xi_patrones_estructurales_facade_1014">El contenido de este apartado ha sido extraido de este enlace</a>
+	<br/><a href="../index.html">Volver a la pagina principal</a>
+
+	<p>Un trabajo bien hecho por el alumnado del modulo de Entornos de Desarrollo. 2020</p>
+</body>
+</html>

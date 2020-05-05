@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<title>Patrones de diseño. Entornos Desarrollo 2020</title>
-<link rel="stylesheet" href="css/screen.css" type="text/css" media="all">
+<title>Patrones de diseño. ITERATOR</title>
+<link rel="stylesheet" href="../css/screen.css" type="text/css" media="all">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="author" content="Cristina Tremi�o Girona">  
 </head>
 <body>
 <header>Entornos de Desarrollo 2020.
@@ -16,23 +17,52 @@
   <a class="addthis_button_email addthis_button_preferred_4 at300b" target="_blank" title="Email" href="#"><span class="at-icon-wrapper" style="background-color: rgb(132, 132, 132); line-height: 16px; height: 16px; width: 16px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-email-6" class="at-icon at-icon-email" style="width: 16px; height: 16px;" title="Email" alt="Email"><title id="at-svg-email-6">Email</title><g><g fill-rule="evenodd"></g><path d="M27 22.757c0 1.24-.988 2.243-2.19 2.243H7.19C5.98 25 5 23.994 5 22.757V13.67c0-.556.39-.773.855-.496l8.78 5.238c.782.467 1.95.467 2.73 0l8.78-5.238c.472-.28.855-.063.855.495v9.087z"></path><path d="M27 9.243C27 8.006 26.02 7 24.81 7H7.19C5.988 7 5 8.004 5 9.243v.465c0 .554.385 1.232.857 1.514l9.61 5.733c.267.16.8.16 1.067 0l9.61-5.733c.473-.283.856-.96.856-1.514v-.465z"></path></g></svg></span></a>
 <div class="atclear"></div></div>
   
-<h1>Modelos de patrones de diseño</h1>
-<p>Estos son los patrones para conocer sus especificaciones accede a los enlaces</p>
+
+<h1>Iterator</h1>
+<div style= "width: 600px;">
+<p>Patrón de diseño de comportamiento</p>
+<p>
+Este patrón de diseño permite recorrer una estructura de datos sin que sea necesario conocer la estructura interna de la misma. Es especialmente útil cuando trabajamos con estructuras de datos complejas, ya que nos permite recorrer sus elementos mediante un Iterador, el Iterador es una interface que proporciona los métodos necesarios para recorrer los elementos de la estructura de datos, los métodos más comunes son:
+</p>
 <ul>
-<li><a href="contenido/singleton.html">Singleton</a></li>
-<li><a href="contenido/decorator.html">Decorator</a></li>
-<li><a href="contenido/fabrica.html">Fábrica abstracta</a></li>
-<li><a href="contenido/fachada.html">Fachada</a></li>
-<li><a href="contenido/construct.html">Construct / Virtual builder</a></li>
-<li><a href="contenido/command.html">Command</a></li>
-<li><a href="contenido/memento.html">Memento</a></li>
-<li><a href="contenido/adapter.html">Adapter</a></li>
-<li><a href="contenido/template.html">Template Method</a></li>
-<li><a href="contenido/iterator.html">Iterator</a></li>
-<li><a href="contenido/builder.html">Builder</a></li>
+	<li><strong>hasNext</strong>: Método que regresa un booleano para indicar si existen más elementos en la estructura por recorrer. True si existen más y false si hemos llegado al final y no hay más elementos por recorrer.</li>
+	<li><strong>next</strong>: Regresa el siguiente elemento de la estructura de datos.</li>
 </ul>
+<img src="../img/iterator-diagram.png" width="645" height="347" title="Estructura del patr�n de dise�o iterator."/><br/>
+<p style="text-align:center";>Estructura del patrón de diseño iterator.</p><br/>
+
+<p>Los elementos del patrón Iterator se describen a continuación:</p>
+
+<ul><li><strong>Client</strong>: Actor que utiliza al Iterator.</li>
+	<li><strong>Aggregate</strong>: Interface que define la estructura de las clases que pueden ser iteradas.</li>
+	<li><strong>ConcreteAggregate</strong>: Clase que contiene la estructura de datos que deseamos iterar.</li>
+	<li><strong>IIterator</strong>: Interface que define la estructura de los iteradores, la cual define los métodos necesarios para poder realizar la iteración sobre el ConcreteAggregator.</li>
+	<li><strong>ConcreteIterator</strong>: Implementación de un iterador concreto, el cual hereda de IIterator para implementar de forma concreta cómo iterar un ConcreteAggregate.</li>
+</ul>
+
+<img src="../img/iterator-sequence.png" width="557" height="405" title="Diagrama de secuencia del patrón Iterator."/><br/>
+<p style="text-align:center";>Diagrama de secuencia del patrón Iterator.</p><br/>
+
+<ul>
+	<li>El cliente solicita al ConcreteAggregate la creación de un iterador.</li>
+	<li>El ConcreteAggregate crea un nuevo Iterador.</li>
+	<li>El cliente, para recorrer los elementos, entra en un ciclo hasta que no existen más elementos en el iterador, el método hasNext le indicará cuándo se ha llegado al final.</li>
+	<li>El cliente solicita el siguiente elemento al iterador mediante el método next.</li>
+	<li>Si existen más elementos nos regresamos al paso tres, esto se repite hasta finalizar el recorrido.</li>
+</ul>
+
+<h2>Ejemplo del mundo real</h2>
+
+<p>Mediante la implementación del patrón de diseñoo Iterator crearemos una aplicación que nos permita recorrer una estructura organizacional jerárquica, mediante la implementación de un iterador, el cual nos permitirá recorrer todo el árbol de la estructura de forma secuencial.</p>
+	
+<img src="../img/iterator2.png" width="640" height="287" title="Descubre como el patrón Iterator nos ayuda a resolver este problema"/><br/>
+<p style="text-align:center";>Descubre como el patrón Iterator nos ayuda a resolver este problema</p><br/>
+	
+<br/><br/><a href="https://reactiveprogramming.io/blog/es/patrones-de-diseno/iterator">El contenido de este apartado ha sido extraido de este enlace</a>
+<br/><br/><a href="../index.html">Volver a la pagina principal</a>
+</div>
 </section>
-<footer><p>Un trabajo bien hecho por el alumnado del módulo de Entornos de Desarrollo. 2020</p>
+<footer><p>Un trabajo bien hecho por el alumnado del modulo de Entornos de Desarrollo. 2020</p>
 </footer>
 </body>
 </html>

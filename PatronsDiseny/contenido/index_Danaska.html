@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Patrones de diseño </title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	</head>
+	<body>
+		<header>Entornos de Desarrollo</header>
+		 <h2>FACADE</h2>
+		 <div>
+		 	<p>
+		 		<br>
+		 			<em>Nombre</em>
+		 			: Facade
+		 			<br>
+		 			<br>
+		 			<em>Problema y Contexto</em>
+		 				:
+		 			<br>
+		 			<br>
+		 				Disponemos de un sistema complejo que, al ser muy flexible, requiere de la configuración de muchos parámetros para conseguir un fin concreto. Por otro lado, nuestro sistema cliente pretende utilizar parte de la funcionalidad que el primer sistema ofrece pero muchas de las operaciones de configuración son siempre las mismas.
+		 			<br>
+		 			<br>
+		 			
+						Otro problema que trata de solucionar este patrón es el uso de varias interfaces de subsistemas mediante un único punto de acceso.
+
+					<br>
+		 			<br>
+
+		 				Se aplica cuando:
+		 				
+		 			<li>Nuestro sistema cliente tiene que acceder a parte de la funcionalidad de un sistema complejo.</li>
+		 			<li>Hay tareas o configuraciones muy frecuentes y es conveniente simplificar el código de uso.</li>
+		 			<li>Necesitamos hacer que una librería sea más legible.</li>
+		 			<li>Nuestros sistemas clientes tienen que acceder a varias APIs y queremos simplificar dicho acceso.</li>
+		 			
+		 			<br>
+		 			<br>
+
+		 			<em>Solución y estructura</em>
+		 				:
+					
+					<br>
+		 			<br>
+
+		 				La solución consiste en crear una clase fachada que proporcione la funcionalidad de manera sencilla a nuestro sistema cliente. Dicha clase utilizará la clase compleja o los distintos componentes de los sistemas requeridos y los ofrecerá por medio de operaciones más simples.
+
+		 			<br>
+		 			<br>
+
+		 				La estructura es la siguiente:
+
+		 			<br>
+		 			<br>
+
+		 				<img src=facadepattern.png alt=image size=400 >
+
+			</p>
+		</div>
+
+		<footer>
+			<small>Referencias: Programación.net</small>
+		</footer>
+
+	</body>
+</html>

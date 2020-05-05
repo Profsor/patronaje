@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-	<meta charset="UTF-8">
-	<meta name="author" content="Juan Antonio Marco Poveda" />
-	<title>Patrones de diseño. Command</title>
-	<link rel="stylesheet" href="../css/screen.css" type="text/css" media="all">
+<title>Patrones de diseñoo. Command</title>
+<link rel="stylesheet" href="../css/screen.css" type="text/css" media="all">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="author" content="Juan Antonio Guillo Lopez y Juan Antonio Marco Poveda">  
 </head>
 <body>
-	<header>
-	Entornos de Desarrollo 2020.
-	</header>
+<header>Entornos de Desarrollo 2020.
+</header>
 <section id="main">
 <div class="addthis_toolbox addthis_default_style ">
   <a class="addthis_button_facebook addthis_button_preferred_1 at300b" title="Facebook" href="#"><span class="at-icon-wrapper" style="background-color: rgb(59, 89, 152); line-height: 16px; height: 16px; width: 16px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-facebook-3" class="at-icon at-icon-facebook" style="width: 16px; height: 16px;" title="Facebook" alt="Facebook"><title id="at-svg-facebook-3">Facebook</title><g><path d="M22 5.16c-.406-.054-1.806-.16-3.43-.16-3.4 0-5.733 1.825-5.733 5.17v2.882H9v3.913h3.837V27h4.604V16.965h3.823l.587-3.913h-4.41v-2.5c0-1.123.347-1.903 2.198-1.903H22V5.16z" fill-rule="evenodd"></path></g></svg></span></a>
@@ -17,6 +16,7 @@
   <a class="addthis_button_print addthis_button_preferred_3 at300b" title="Print" href="#"><span class="at-icon-wrapper" style="background-color: rgb(115, 138, 141); line-height: 16px; height: 16px; width: 16px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-print-5" class="at-icon at-icon-print" style="width: 16px; height: 16px;" title="Print" alt="Print"><title id="at-svg-print-5">Print</title><g><path d="M24.67 10.62h-2.86V7.49H10.82v3.12H7.95c-.5 0-.9.4-.9.9v7.66h3.77v1.31L15 24.66h6.81v-5.44h3.77v-7.7c-.01-.5-.41-.9-.91-.9zM11.88 8.56h8.86v2.06h-8.86V8.56zm10.98 9.18h-1.05v-2.1h-1.06v7.96H16.4c-1.58 0-.82-3.74-.82-3.74s-3.65.89-3.69-.78v-3.43h-1.06v2.06H9.77v-3.58h13.09v3.61zm.75-4.91c-.4 0-.72-.32-.72-.72s.32-.72.72-.72c.4 0 .72.32.72.72s-.32.72-.72.72zm-4.12 2.96h-6.1v1.06h6.1v-1.06zm-6.11 3.15h6.1v-1.06h-6.1v1.06z"></path></g></svg></span></a>
   <a class="addthis_button_email addthis_button_preferred_4 at300b" target="_blank" title="Email" href="#"><span class="at-icon-wrapper" style="background-color: rgb(132, 132, 132); line-height: 16px; height: 16px; width: 16px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-email-6" class="at-icon at-icon-email" style="width: 16px; height: 16px;" title="Email" alt="Email"><title id="at-svg-email-6">Email</title><g><g fill-rule="evenodd"></g><path d="M27 22.757c0 1.24-.988 2.243-2.19 2.243H7.19C5.98 25 5 23.994 5 22.757V13.67c0-.556.39-.773.855-.496l8.78 5.238c.782.467 1.95.467 2.73 0l8.78-5.238c.472-.28.855-.063.855.495v9.087z"></path><path d="M27 9.243C27 8.006 26.02 7 24.81 7H7.19C5.988 7 5 8.004 5 9.243v.465c0 .554.385 1.232.857 1.514l9.61 5.733c.267.16.8.16 1.067 0l9.61-5.733c.473-.283.856-.96.856-1.514v-.465z"></path></g></svg></span></a>
 <div class="atclear"></div></div>
+
 	</section>
 	<h1>Patrón de diseño Command</h1>
 	
@@ -50,9 +50,35 @@
 		</div>
 		
 	</section>
-	<footer>
-		<p>Trabajo realizado por los alumnos del módulo Entornos de Desarrollo 2020</p>
-	</footer>
 
-</body>
-</html>
+
+ <h1>Command</h1>
+<div style= "width: 600px;">
+<p>Patrón de diseño de comportamiento</p>
+<p>
+Basicamente lo que promueve este patron de diseño es la encapsulación de la peticion de una operación bajo un metodo sin conocer los detalles de su implementación. Las operaciones son conocidas como comandos y cada operación es implementada como una clase independiente que realiza una acción muy concreta.
+</p>
+<img src="../img/command-diagram.png" width="600" height="400" title="Estructura del patrón de diseño Command."></img><br/>
+<p style="text-align:center";>Estructura del patrón de diseño Command.</p><br/>
+<p>Los componentes del patrón de diseño: <br/><br/>
+<strong>ICommand:</strong> Interfaz la cual describe los métodos de ejecucion vacios para los comandos. ICommand uede ser una interfaz o una clase abstracta<br/>
+<strong>Concrete Command:</strong> Esto representa clases en las cuales se implementa la interfaz y sobreescriben los metodos de esta.<br/>
+<strong>Command Manager</strong>Funciona como un gestor de comandos, desde aquí podemos solicitar los comandos o registrar nuevos. Es importante ya que debe es esta clase la que se encarge de administrar los comandos y ejecutarlos. <br/>
+<strong>Invoker:</strong>El invoker es el encargado de ejecutar los comandos, podría ser por ejemplo un usuario, una aplicación o algún evento generado por nuestra aplicación.<br/>
+</p>
+<img src="../img/command-sequence.png" width="600" height="400" title="Diagrama de secuencia del patrón de diseño Command"></img><br/>
+<p style="text-align:center";>Diagrama de secuencia del patrón de diseño Command.</p><br/>
+<p><Strong>Explicación del diagrama de secuencia</Strong> Invoker obtiene un Comando del Command Manager, lo ejecuta y le vuelve a pasar otro el Command Manager.</p>
+<h1>Ejemplo sencillo practico</h1>
+<img src="../img/commandejemplo2.png" width="600" height="400" title="Diagrama de secuencia del patrón de diseño Command"></img><br/>
+<h1>Bibliografia</h1>
+<br/><br/><a href="https://reactiveprogramming.io/blog/es/patrones-de-diseno/command">Sitio 1</a>
+<br/><br/><a href="https://www.oscarblancarteblog.com/2014/11/19/patron-de-diseno-command/">Sitio 2</a>
+<br/><br/><a href="../index.html">Volver a la pagina principal</a>
+</div>
+</section>
+<footer><p>Un trabajo bien hecho por el alumnado del módulo de Entornos de Desarrollo. 2020</p>
+</footer>
+  </body>
+  </html>
+

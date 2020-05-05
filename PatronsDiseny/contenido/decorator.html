@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Patrones de diseño. DECORATOR</title>
+<link rel="stylesheet" href="../css/screen.css" type="text/css" media="all">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<header>Entornos de Desarrollo 2020.
+</header>
+
+
+<h1>Decorator</h1>
+<div style= "width: 600px;">
+<p>Patrón de diseño de comportamiento</p>
+<p>Nuestro sistema requiere que la funcionalidad de ciertos componentes pueda extenderse y modificarse en tiempo de ejecución. Además pretendemos que esta característica no se implemente mediante herencia para poder aprovechar al máximo las clases existentes sin introducir jerarquías complejas y extensas.
+</p>
+<p>Se aplica cuando:</p>
+<ul>
+	<li>Necesitamos añadir responsabilidades a objetos individuales de forma dinámica y transparente</li>
+	<li>Se pueden revocar responsabilidades antes asignadas a nuestros objetos.</li>
+	<li>La extensión mediante herencia viola los principios SOLID.</li>
+	<li>Necesitamos extender la funcionalidad de una clase pero la herencia no es una solución viable.</li>
+	<li>Necesitamos extender la funcionalidad de un objeto en tiempo de ejecución e incluso eliminarla si fuera necesario.></li>
+</ul>
+
+<p>Solución y estructura:</p>
+<p>Crearemos un nuevo peldaño en la jerarquía de clases llamado Decorator que encapsulará las nuevas responsabilidades. Esta nueva clase se encarga de redirigir las peticiones al componente original admás de permitir la modificación de ciertos aspectos antes y después de dicha redirección. Con esta estructura, podremos añadir nuevas funcionalidades con forma de decoradores de manera recursiva.</p>
+
+
+<img src="../img/decorator.png" width="600" height="400" title="Estructura del patrón de diseño Decorator."></img><br/>
+
+
+<br/><br/><a href="https://programacion.net/articulo/patrones_de_diseno_x_patrones_estructurales_decorator_1013">El contenido de este apartado ha sido extraido de este enlace</a>
+<br/><br/><a href="../index.html">Volver a la pagina principal</a>
+</div)
+
+</body>
+</html>
