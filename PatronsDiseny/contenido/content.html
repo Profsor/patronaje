@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Patrones de diseño. Object pool</title>
+<link rel="stylesheet" href="../css/screen.css" type="text/css" media="all">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="author" content="Adrian Perez Anton">  
+</head>
+<body id="">
+<section id="main">
+<h1>Object pool</h1>
+<div style= "width: 600px;">
+<p>Piscina de objetos</p>
+<p>
+es un patrón de diseño para el desarrollo de software. El patrón object pool es un patrón de diseño de software que usa un conjunto de objetos inicializados preparados para su uso. Esto es más efectivo normalmente que creando y destruyendo los objetos bajo demanda. Un cliente del pool le pedirá un objeto para realizar las operaciones con el objeto. Cuando el cliente termina retorna el objeto al pool para que lo retenga hasta que vuelva a necesitar usarse. Es decir, los objetos no se crean (salvo la primera vez) ni se destruyen, simplemente se van reciclando.
+
+Este patrón de diseño suele mejorar significativamente el rendimiento en situaciones donde el coste de iniciar una instancia de clase es alto y cuando el número de instancias simultáneas no es muy alto.
+
+Es común usar los Object Pools para la creación de recursos gráficos, conexiones a base de datos, sockets y en general cualquier objeto cuya creación es costosa. En ciertas ocasiones el uso de este patrón es más costoso.
+</p> 
+<img src="../img/object-pool-diagram.png" width="650" height="350"/><br/>
+
+<h2>DESCRIPCIÓN</h2>
+<p>Cuando es necesario trabajar con un gran número de objetos que son particularmente costosos para instanciar y cada objeto solo se necesita durante un corto período de tiempo, el rendimiento de una aplicación completa puede verse afectada negativamente. Un patrón de diseño object pool puede resultar útil en casos como estos.
+
+El patrón de diseño object pool crea un conjunto de objetos que pueden ser reutilizados. Cuando se necesita un nuevo objeto, se extrae del conjunto. Si un objeto previamente preparado está disponible se devuelve inmediatamente, evitando así el costo de instanciarlos. Si no hay objetos disponibles, se crea uno nuevo y se agrega al conjunto. Cuando el objeto ha sido utilizado y ya no se necesita, se devuelve al conjunto, lo que le permite ser utilizado de nuevo en el futuro sin tener que repetir el proceso de instanciación computacionalmente costoso. Es importante tener en cuenta que una vez que un objeto se ha utilizado y regresado, las referencias existentes se vuelven inválidás.
+
+En algunos casos los recursos pueden ser limitados por lo que se especifica un número máximo de objetos. Si se alcanza este número y se solicita un nuevo elemento, puede lanzarse una excepción, o se puede bloquear el hilo de trabajo hasta que un objeto se libere de nuevo.
+</p>
+
+<br/><br/><a href="https://es.wikipedia.org/wiki/Object_pool_(patr%C3%B3n_de_dise%C3%B1o)">El contenido de este apartado ha sido extraido de este enlace</a><br/>
+<a href="https://es.wikipedia.org/wiki/Patr%C3%B3n_de_dise%C3%B1o">Más documentacion</a>
+</div>
+</body>
+</html>
